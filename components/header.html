@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Header</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: #35a6e8;
+        left: 0;
+        bottom: -4px;
+        transition: 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      /* ACTIVE MENU */
+      .nav-link.active {
+        color: #e91b25;
+        font-weight: 700;
+      }
+
+      .nav-link.active::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- TOP BAR -->
+    <div class="bg-[#1E3A8A] text-white text-sm">
+      <div class="max-w-7xl mx-auto flex justify-between px-6 py-2">
+        <div><i class="fa-solid fa-phone"></i> +91 9583155755</div>
+
+        <div><i class="fa-solid fa-envelope mt-1"></i> littleworldemschool@gmail.com</div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-2 py-4 flex justify-between items-center"
+      >
+        <!-- LOGO -->
+        <div class="flex items-center gap-3">
+          <img src="images/logo.png" class="h-16" />
+           
+        </div>
+
+        <!-- MENU -->
+        <nav class="hidden md:flex gap-8 font-medium">
+          <a href="index.html" class="nav-link hover:text-[#e91b25]">HOME</a>
+          <a href="about.html" class="nav-link hover:text-[#e91b25]">ABOUT</a>
+          <a href="admission.html" class="nav-link hover:text-[#e91b25]"
+            >ADMISSION</a
+          >
+          <a href="academic.html" class="nav-link hover:text-[#e91b25]"
+            >ACADEMICS</a
+          >
+          <a href="facility.html" class="nav-link hover:text-[#e91b25]"
+            >FACILITIES</a
+          >
+          <a href="gallery.html" class="nav-link hover:text-[#e91b25]"
+            >GALLERY</a
+          >
+          <a
+            href="mandatory-disclosure.html"
+            class="nav-link hover:text-[#e91b25]"
+            >MANDATORY DISCLOSURE</a
+          >
+          <a href="contact.html" class="nav-link hover:text-[#e91b25]"
+            >CONTACT</a
+          >
+        </nav>
+
+        <!-- BUTTON -->
+        <div class="hidden md:block">
+          <a
+            href="admission.html"
+            class="bg-[#35a6e8] text-white px-4 py-2 rounded"
+          >
+            Apply Now
+          </a>
+        </div>
+
+        <!-- MOBILE BUTTON -->
+        <button onclick="openMenu()" class="md:hidden text-2xl">☰</button>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div
+        id="mobileMenu"
+        class="fixed top-0 right-0 h-full w-64 bg-gray-200 p-6 transform translate-x-full transition duration-300 z-50"
+      >
+        <div
+          class="text-right text-3xl cursor-pointer mb-6"
+          onclick="closeMenu()"
+        >
+          ×
+        </div>
+        <nav class="flex flex-col gap-6 text-lg font-medium">
+          <a href="index.html" onclick="closeMenu()">Home</a>
+          <a href="about.html" onclick="closeMenu()">About</a>
+          <a href="admission.html" onclick="closeMenu()">Admission</a>
+          <a href="academic.html" onclick="closeMenu()">Academic</a>
+          <a href="facility.html" onclick="closeMenu()">Facility</a>
+          <a href="mandatory-disclosure.html" onclick="closeMenu()"
+            >Mandatory Disclosure</a
+          >
+          <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+          <a href="contact.html" onclick="closeMenu()">Contact</a>
+        </nav>
+      </div>
+    
+<div
+        id="overlay"
+        class="fixed inset-0 bg-black/40 hidden"
+        onclick="closeMenu()"
+      ></div>
+</header>
+  </body>
+</html>
